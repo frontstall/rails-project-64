@@ -27,8 +27,8 @@
 #       "yes": yup
 #       enabled: "ON"
 
-en:
-  home: "Blog"
-  sign_in: "Sign in"
-  sign_out: "Logout"
-  sign_up: "Register"
+ru:
+  home: "Блог"
+  sign_in: "Войти"
+  sign_out: "Выйти"
+  sign_up: "Регистрация"
