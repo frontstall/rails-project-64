@@ -1,0 +1,13 @@
+h1 = t("sign_in")
+
+.card
+  .card-body
+    = simple_form_for(resource, url: session_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      = f.input :email, input_html: { autocomplete: "email", autofocus: true }
+      = f.input :password, input_html: { autocomplete: "current-password" }
+      = f.input :remember_me, as: :boolean
+      .form-group
+        = f.button :submit, class: "btn btn-primary"
+          = t("sign_in")
+    = render "devise/shared/links"

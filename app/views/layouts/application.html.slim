@@ -17,9 +17,9 @@ html.h-100
   body.d-flex.flex-column.h-100
     header.container
       = render "layouts/shared/nav"
+    main.flex-shrink-0.mt-5.pt-3
       .container
         = render "layouts/shared/flash"
-    main.flex-shrink-0
-      .container
+      .container.pb-5
         = yield
     = render "layouts/shared/footer"

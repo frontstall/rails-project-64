@@ -23,5 +23,6 @@ module RailsProject64
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    I18n.config.available_locales = %i[en ru]
   end
 end

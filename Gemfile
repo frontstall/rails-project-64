@@ -68,6 +68,8 @@ group :development do
   gem "web-console"
 
   gem "annotate"
+
+  gem "byebug"
 end
 
 group :test do
