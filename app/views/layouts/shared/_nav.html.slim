@@ -8,13 +8,14 @@
       aria-expanded="false"]
       span.navbar-toggler-icon
     .collapse.navbar-collapse[id="navbarNavAltMarkup"]
-      ul.navbar-nav.ms-auto.mb-2.mb-md-0
+      .navbar-nav.ms-auto.mb-2.mb-md-0
       - if user_signed_in?
-        li.nav-item
+        .nav-item
+          = link_to t("create_new_post"), new_post_path, class: "btn btn-primary me-2"
           = link_to t("sign_out"), destroy_user_session_path, \
               data: { turbo_method: :delete }, class: "btn btn-outline-success"
       - else
-        li.nav-item
+        .nav-item
           = link_to t("sign_in"), new_user_session_path, class: "btn btn-outline-success me-2"
-        li.nav-item
+        .nav-item
           = link_to t("sign_up"), new_user_registration_path, class: "btn btn-outline-success"

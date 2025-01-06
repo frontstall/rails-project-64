@@ -9,6 +9,5 @@ h1 = t("sign_up")
       = f.input :password_confirmation, input_html: { autocomplete: "new-password" }
 
       .form-group
-        = f.button :submit, class: "btn btn-primary"
-          = t("sign_up")
+        = f.button :submit, class: "btn btn-primary mb-1", value: t("sign_up")
     = render "devise/shared/links"

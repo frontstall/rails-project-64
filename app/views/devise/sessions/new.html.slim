@@ -7,7 +7,7 @@ h1 = t("sign_in")
       = f.input :email, input_html: { autocomplete: "email", autofocus: true }
       = f.input :password, input_html: { autocomplete: "current-password" }
       = f.input :remember_me, as: :boolean
+
       .form-group
-        = f.button :submit, class: "btn btn-primary"
-          = t("sign_in")
+        = f.button :submit, class: "btn btn-primary mb-1", value: t("sign_in")
     = render "devise/shared/links"
