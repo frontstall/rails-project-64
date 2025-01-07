@@ -1,0 +1,9 @@
+.card.mb-2
+  .card-header.d-flex.justify-content-between
+    span = comment.author.email
+    span = comment.created_at.strftime("%-d %b %Y %T")
+  .card-body
+    .card-text.mb-2 = comment.content
+    a data-bs-target="#comment-#{comment.id}" class="btn btn-primary" data-bs-toggle= "collapse" aria-controls="comment-#{comment.id}"
+      = t("reply")
+    .collapse id="comment-#{comment.id}" collapsed

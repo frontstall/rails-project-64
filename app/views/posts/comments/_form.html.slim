@@ -1,0 +1,6 @@
+= simple_form_for(comment, url:, html: { class: "mb-3" }) do |f|
+  .form-inputs
+    = f.input :content, label: t("new_comment")
+
+  .form-actions
+    = f.submit class: "btn btn-primary", value: t("submit")
