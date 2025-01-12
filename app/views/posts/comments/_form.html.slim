@@ -1,5 +1,7 @@
 = simple_form_for(comment, url:, html: { class: "mb-3" }) do |f|
   .form-inputs
+    - unless comment.parent.nil?
+      = f.input :parent_id, as: :hidden, value: comment.parent.id
     = f.input :content, label: t("new_comment")
 
   .form-actions

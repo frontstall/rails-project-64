@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = PostComment.new
+    @comments = @post.comments.select { |comment| comment.parent.nil? }
   end
 
   def new
@@ -20,7 +21,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
     @post.creator = current_user
 
     if @post.save

@@ -14,5 +14,5 @@ p = simple_format @post.body
 
 h2 = t("comments")
 = render partial: "posts/comments/form", locals: { comment: @comment, url: post_comments_path(@post) }
-- @post.comments.each do |comment|
-  = render partial: "posts/comments/show", locals: { comment: }
+- @comments.each do |comment|
+  = render partial: "posts/comments/show", locals: { comment:, post_id: @post.id }

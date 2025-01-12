@@ -8,9 +8,10 @@ class Posts::CommentsController < Posts::ApplicationController
   def create
     @post = Post.find(params[:post_id])
     comment = @post.comments.build(comment_params)
+    parent_id = comment_params[:parent_id]
+    comment.parent = PostComment.find(parent_id) if parent_id
 
     comment.author = current_user
-
 
     if comment.save
       redirect_to @post, notice: "Comment was successfully created."
@@ -42,7 +43,7 @@ class Posts::CommentsController < Posts::ApplicationController
     end
 
     def comment_params
-      params.require(:post_comment).permit(:author_id, :post_id, :content)
+      params.require(:post_comment).permit(:author_id, :post_id, :content, :parent_id)
     end
 
     def redirect_if_guest
