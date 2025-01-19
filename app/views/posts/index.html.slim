@@ -11,3 +11,7 @@ h1 Posts
       .card-subtitle.small = "#{t("category")}: #{post.category.name}"
       .card-text
         = truncate post.body, separator: /( |\.)/, length: 100
+    .card-footer.d-flex
+      .d-flex.ms-auto
+        span.me-2 = t("liked")
+        span = post.likes.count

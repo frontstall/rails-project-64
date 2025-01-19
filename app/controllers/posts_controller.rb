@@ -8,8 +8,12 @@ class PostsController < ApplicationController
   end
 
   def show
+    @can_edit = user_is_post_creator?
+    @can_delete  = user_is_post_creator?
     @comment = PostComment.new
     @comments = @post.comments.select { |comment| comment.parent.nil? }
+    @likes_count = @post.likes.count
+    @has_user_like = user_signed_in? && @post.likes.find_by(user_id: current_user.id)
   end
 
   def new
@@ -63,6 +67,6 @@ class PostsController < ApplicationController
     end
 
     def user_is_post_creator?
-      @post.creator.id == current_user.id
+      user_signed_in? && @post.creator.id == current_user.id
     end
 end
