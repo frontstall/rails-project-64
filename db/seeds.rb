@@ -9,5 +9,5 @@
 #   end
 
 %w[common cars it climbing].each do |name|
-  Category.create!(name:)
+  Category.find_or_create_by!(name:)
 end

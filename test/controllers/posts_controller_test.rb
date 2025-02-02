@@ -20,7 +20,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post" do
     assert_difference("Post.count") do
-      post posts_url(locale: :en, params: { post: { body: @post.body, title: @post.title, category_id: @post.category.id } })
+      post posts_url(locale: :en), params: { post: { body: @post.body, title: @post.title, category_id: @post.category.id } }
     end
 
     assert_redirected_to post_url(Post.last)
@@ -38,7 +38,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update post" do
     patch post_url(@post, locale: :en), params: { post: { body: @post.body, title: @post.title } }
-    assert_redirected_to post_url(@post)
+    assert_redirected_to @post
   end
 
   test "should destroy post" do
