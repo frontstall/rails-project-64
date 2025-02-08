@@ -2,6 +2,6 @@
 
 one:
   content: MyText
-  author: test_user
+  user: test_user
   post: one
   ancestry: "/"

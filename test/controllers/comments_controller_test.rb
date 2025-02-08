@@ -10,7 +10,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post comment" do
     assert_difference("PostComment.count") do
-      post post_comments_url(@post, locale: :en), params: { post_comment: { author_id: users(:test_user).id, content: "First comment" } }
+      post post_comments_url(@post, locale: :en), params: { post_comment: { user_id: users(:test_user).id, content: "First comment" } }
     end
 
     assert_redirected_to @post
@@ -18,7 +18,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create reply to comment" do
     assert_difference("PostComment.count") do
-      post post_comments_url(@post, locale: :en), params: { post_comment: { author_id: users(:test_user).id, content: "Reply to comment", parent_id: post_comments(:one).id } }
+      post post_comments_url(@post, locale: :en), params: { post_comment: { user_id: users(:test_user).id, content: "Reply to comment", parent_id: post_comments(:one).id } }
     end
   end
 end

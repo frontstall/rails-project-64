@@ -1,6 +1,6 @@
 .card.mb-2
   .card-header.d-flex.justify-content-between
-    span = comment.author.email
+    span = comment.user.email
     span = comment.created_at.strftime("%-d %b %Y %T")
   .card-body
     .card-text.mb-2 = comment.content
