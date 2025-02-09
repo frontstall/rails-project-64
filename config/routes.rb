@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   scope "(:locale)", locale: /#{I18n.available_locales.join('|')}/ do
-  root "posts#index"
+    root "posts#index"
 
     devise_for :users
     resources :posts do

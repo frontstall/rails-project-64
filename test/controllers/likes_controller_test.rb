@@ -10,7 +10,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post like" do
     assert_difference("PostLike.count") do
-      post post_likes_url(@post, locale: :en)
+      post post_likes_url @post
     end
 
     assert_redirected_to @post
@@ -18,7 +18,7 @@ class LikesControllerTest < ActionDispatch::IntegrationTest
 
   test "should delete post like" do
     assert_difference("PostLike.count", -1) do
-      delete post_likes_url(@post, locale: :en)
+      delete post_likes_url(@post)
     end
 
     assert_redirected_to @post
