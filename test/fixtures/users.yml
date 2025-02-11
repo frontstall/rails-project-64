@@ -6,3 +6,6 @@
 #
 test_user:
   email: test@test.io
+
+another_user:
+  email: another@test.io

@@ -20,5 +20,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_difference("PostComment.count") do
       post post_comments_url(@post), params: { post_comment: { content: "Reply to comment", parent_id: post_comments(:one).id } }
     end
+
+    assert_redirected_to @post
   end
 end

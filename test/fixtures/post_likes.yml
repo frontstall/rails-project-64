@@ -7,3 +7,7 @@
 one:
   post: one
   user: test_user
+
+two:
+  post: one
+  user: another_user

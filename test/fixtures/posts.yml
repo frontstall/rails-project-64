@@ -3,11 +3,11 @@
 one:
   title: Lorem ipsum
   body: Body text
-  category: cars
+  category: one
   creator: test_user
 
 two:
   title: Ipsum lorem
   body: Long long text
-  category: girls
+  category: two
   creator: test_user

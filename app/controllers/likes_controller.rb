@@ -1,6 +1,8 @@
 class LikesController < ApplicationController
-  before_action :redirect_if_guest, only: %i[ create destroy ]
+  before_action :set_like, only: %i[ destroy ]
   before_action :set_post, only: %i[ create destroy ]
+  before_action :redirect_if_guest, only: %i[ create destroy ]
+  before_action :redirect_if_not_authorized, only: %i[ destroy ]
 
   def create
     like = PostLike.new
@@ -15,11 +17,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like = PostLike.find_by(post_id: @post.id, user_id: current_user.id)
-
-    redirect_to new_user_session_url if like.nil?
-
-    if like.destroy
+    if @like.destroy
       redirect_to @post
     else
       redirect_to @post, status: :unprocessable_entity
@@ -33,6 +31,18 @@ class LikesController < ApplicationController
   end
 
   def set_post
-    @post = Post.find_by(params[:post_id])
+    @post = Post.find params[:post_id]
+  end
+
+  def set_like
+    @like = PostLike.find params[:id]
+  end
+
+  def redirect_if_not_authorized
+    redirect_to new_user_session_url unless user_is_like_creator?
+  end
+
+  def user_is_like_creator?
+    @like.user.id == current_user.id
   end
 end

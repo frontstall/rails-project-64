@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @comment = PostComment.new
     @comments = @post.comments.select { |comment| comment.parent.nil? }
     @likes_count = @post.likes.count
-    @has_user_like = user_signed_in? && @post.likes.find_by(user_id: current_user.id)
+    @like = @post.likes.find_by(user_id: current_user.id) if user_signed_in?
   end
 
   def new
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
     end
 
     def redirect_if_not_authorized
-      render :show, status: :unauthorised unless user_is_post_creator?
+      render :show, status: :unauthorized unless user_is_post_creator?
     end
 
     def user_is_post_creator?

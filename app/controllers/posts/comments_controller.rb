@@ -51,7 +51,7 @@ class Posts::CommentsController < Posts::ApplicationController
     end
 
     def redirect_if_not_authorized
-      render :show, status: :unauthorised unless user_is_comment_author?
+      render :show, status: :unauthorized unless user_is_comment_author?
     end
 
     def user_is_comment_author?
