@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :posts do
       resources :comments, only: %i[edit create update destroy], module: :posts
       resources :likes, only: %i[create]
-      delete "/likes", to: "likes#destroy", as: "like"
+      post "/likes/:id", to: "likes#destroy", as: "like"
     end
   end
 end
