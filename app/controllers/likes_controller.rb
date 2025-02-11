@@ -15,7 +15,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like = PostLike.find_by(post_id: @post.id, user_id: current_user.id)
+    like = PostLike.find params[:id]
 
     redirect_to new_user_session_url if like.nil?
 
@@ -33,6 +33,6 @@ class LikesController < ApplicationController
   end
 
   def set_post
-    @post = Post.find_by(params[:post_id])
+    @post = Post.find params[:post_id]
   end
 end

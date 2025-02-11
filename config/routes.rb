@@ -15,8 +15,11 @@ Rails.application.routes.draw do
     devise_for :users
     resources :posts do
       resources :comments, only: %i[edit create update destroy], module: :posts
-      resources :likes, only: %i[create]
-      delete "/likes", to: "likes#destroy", as: "like"
+      resources :likes, only: %i[create] do
+        member do
+          post :destroy
+        end
+      end
     end
   end
 end

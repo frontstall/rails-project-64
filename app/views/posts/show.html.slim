@@ -9,8 +9,8 @@ p = simple_format @post.body
     address.mb-0 = @post.creator.email
     .ms-3.d-flex.align-items-center
       .me-1 = @likes_count
-      - if @has_user_like
-        = link_to post_like_path(@post.id), data: { turbo_method: :delete } do
+      - if @like
+        = link_to post_like_path(@post.id, @like.id), data: { turbo_method: :post } do
           i.bi.bi-hand-thumbs-up-fill
       - else
         = link_to post_likes_path(@post.id), data: { turbo_method: :post } do
