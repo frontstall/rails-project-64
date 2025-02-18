@@ -28,11 +28,20 @@
 #       enabled: "ON"
 
 ru:
-  home: "Блог"
-  sign_in: "Войти"
-  sign_out: "Выйти"
-  sign_up: "Регистрация"
-  wrote: "Написал"
-  category: "Категория"
-  comments: "Комментарии"
-  submit: "Отправить"
+  home: Блог
+  sign_in: Войти
+  sign_out: Выйти
+  sign_up: Регистрация
+  wrote: Написал
+  category: Категория
+  comments: Комментарии
+  submit: Отправить
+  notice:
+    comments:
+      created: Комментарий добавлен
+      updated: Комментарий изменён
+      deleted: Комментарий удалён
+    posts:
+      created: Пост добавлен
+      updated: Пост изменён
+      deleted: Пост удалён

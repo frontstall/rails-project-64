@@ -28,11 +28,20 @@
 #       enabled: "ON"
 
 en:
-  home: "Blog"
-  sign_in: "Sign in"
-  sign_out: "Logout"
-  sign_up: "Register"
-  wrote: "wrote"
-  category: "category"
-  comments: "Comments"
-  submit: "Submit"
+  home: Blog
+  sign_in: Sign in
+  sign_out: Logout
+  sign_up: Register
+  wrote: wrote
+  category: category
+  comments: Comments
+  submit: Submit
+  notice:
+    comments:
+      created: Comment was successfully created.
+      updated: Comment was successfully updated.
+      deleted: Comment was successfully deleted.
+    posts:
+      created: Post was successfully created.
+      updated: Post was successfully updated.
+      deleted: Post was successfully deleted.

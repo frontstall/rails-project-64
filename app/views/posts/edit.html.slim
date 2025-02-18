@@ -1,8 +1,8 @@
 h1 Editing post
 
-== render "form", post: @post
+== render 'form', post: @post
 
 .d-flex.gap-2.mt-3
-  = link_to t("show_post"), @post, class: "btn btn-outline-primary"
-  = link_to t("back_to_posts"), posts_path, class: "btn btn-outline-primary"
-  = link_to t("destroy_post"), @post, method: :delete, class: "btn btn-outline-danger ms-auto"
+  = link_to t('show_post'), @post, class: 'btn btn-outline-primary'
+  = link_to t('back_to_posts'), posts_path, class: 'btn btn-outline-primary'
+  = link_to t('destroy_post'), @post, method: :delete, class: 'btn btn-outline-danger ms-auto'

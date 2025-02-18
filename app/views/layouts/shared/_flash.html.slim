@@ -1,6 +1,6 @@
 - flash.any?
-  - mapping = { "failure" => "danger", "success" => "success" }
+  - mapping = { 'failure' => 'danger', 'success' => 'success' }
   - flash.each do |name, msg|
-    .alert.alert-dismissible.fade.show class="alert-#{mapping[name] || "success"}"
+    .alert.alert-dismissible.fade.show class="alert-#{mapping[name] || 'success'}"
       == msg
       button.btn-close type='button' data-bs-dismiss='alert'

@@ -2,25 +2,25 @@ doctype html
 html.h-100
   head
     title
-      = content_for(:title) || "Rails Project 64"
-    meta[name="viewport" content="width=device-width,initial-scale=1"]
-    meta[name="apple-mobile-web-app-capable" content="yes"]
+      = content_for(:title) || 'Rails Project 64'
+    meta[name='viewport' content='width=device-width,initial-scale=1']
+    meta[name='apple-mobile-web-app-capable' content='yes']
     = csrf_meta_tags
     = csp_meta_tag
     = yield :head
-    link[rel="manifest" href="/manifest.json"]
-    link[rel="icon" href="/icon.png" type="image/png"]
-    link[rel="icon" href="/icon.svg" type="image/svg+xml"]
-    link[rel="apple-touch-icon" href="/icon.png"]
-    link[rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"]
-    = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
+    link[rel='manifest' href='/manifest.json']
+    link[rel='icon' href='/icon.png' type='image/png']
+    link[rel='icon' href='/icon.svg' type='image/svg+xml']
+    link[rel='apple-touch-icon' href='/icon.png']
+    link[rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css']
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbo-track': 'reload', type: 'module'
   body.d-flex.flex-column.h-100
     header.container
-      = render "layouts/shared/nav"
+      = render 'layouts/shared/nav'
     main.flex-shrink-0.mt-5.pt-3
       .container
-        = render "layouts/shared/flash"
+        = render 'layouts/shared/flash'
       .container.pb-5
         = yield
-    = render "layouts/shared/footer"
+    = render 'layouts/shared/footer'

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class LikesController < ApplicationController
-  before_action :set_like, only: %i[ destroy ]
-  before_action :set_post, only: %i[ create destroy ]
-  before_action :redirect_if_guest, only: %i[ create destroy ]
-  before_action :redirect_if_not_authorized, only: %i[ destroy ]
+  before_action :set_like, only: %i[destroy]
+  before_action :set_post, only: %i[create destroy]
+  before_action :redirect_if_guest, only: %i[create destroy]
+  before_action :redirect_if_not_authorized, only: %i[destroy]
 
   def create
     like = PostLike.new

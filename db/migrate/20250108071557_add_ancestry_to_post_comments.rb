@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddAncestryToPostComments < ActiveRecord::Migration[7.2]
   def change
     if Rails.env.production?

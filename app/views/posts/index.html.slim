@@ -1,17 +1,17 @@
-p style="color: green" = notice
+p style='color: green' = notice
 
 h1 Posts
 
 - @posts.each do |post|
   .card.mb-3
     .card-header.text-start
-      = "#{post.creator.email} #{t("wrote")} at #{post[:created_at].strftime('%T %-d %b %Y')}:"
+      = "#{post.creator.email} #{t('wrote')} at #{post[:created_at].strftime('%T %-d %b %Y')}:"
     .card-body
       h2.card-title = link_to post.title, post
-      .card-subtitle.small = "#{t("category")}: #{post.category.name}"
+      .card-subtitle.small = "#{t('category')}: #{post.category.name}"
       .card-text
         = truncate post.body, separator: /( |\.)/, length: 100
     .card-footer.d-flex
       .d-flex.ms-auto
-        span.me-2 = t("liked")
+        span.me-2 = t('liked')
         span = post.likes.count

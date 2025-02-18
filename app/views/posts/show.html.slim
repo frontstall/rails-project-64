@@ -1,10 +1,10 @@
 h1 = @post.title
-p.small = "#{t("category")}: #{@post.category.name}"
+p.small = "#{t('category')}: #{@post.category.name}"
 
 p = simple_format @post.body
 
 .d-flex.justify-content-between.mb-3
-  time[pubdate] = @post.created_at.strftime("%T %-d %b %Y")
+  time[pubdate] = @post.created_at.strftime('%T %-d %b %Y')
   .d-flex
     address.mb-0 = @post.creator.email
     .ms-3.d-flex.align-items-center
@@ -18,12 +18,12 @@ p = simple_format @post.body
 
 .d-flex.gap-2.mb-2
   - if @can_edit
-    = link_to t("edit_post"), edit_post_path(@post), class: "btn btn-outline-primary"
-  = link_to t("back_to_posts"), posts_path, class: "btn btn-outline-primary"
+    = link_to t('edit_post'), edit_post_path(@post), class: 'btn btn-outline-primary'
+  = link_to t('back_to_posts'), posts_path, class: 'btn btn-outline-primary'
   - if @can_delete
-    = link_to t("destroy_post"), @post, method: :delete, class: "btn btn-outline-danger ms-auto"
+    = link_to t('destroy_post'), @post, method: :delete, class: 'btn btn-outline-danger ms-auto'
 
-h2 = t("comments")
-= render partial: "posts/comments/form", locals: { comment: @comment, url: post_comments_path(@post) }
+h2 = t('comments')
+= render partial: 'posts/comments/form', locals: { comment: @comment, url: post_comments_path(@post) }
 - @comments.each do |comment|
-  = render partial: "posts/comments/show", locals: { comment:, post_id: @post.id }
+  = render partial: 'posts/comments/show', locals: { comment:, post_id: @post.id }

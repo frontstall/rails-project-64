@@ -1,13 +1,13 @@
 .card.mb-2
   .card-header.d-flex.justify-content-between
     span = comment.user.email
-    span = comment.created_at.strftime("%-d %b %Y %T")
+    span = comment.created_at.strftime('%-d %b %Y %T')
   .card-body
     .card-text.mb-2 = comment.content
-    a data-bs-target="#comment-#{comment.id}" class="btn btn-primary mb-3" data-bs-toggle= "collapse" aria-controls="comment-#{comment.id}"
-      = t("reply")
+    a data-bs-target="#comment-#{comment.id}" class='btn btn-primary mb-3' data-bs-toggle= 'collapse' aria-controls="comment-#{comment.id}"
+      = t('reply')
     .collapse id="comment-#{comment.id}"
-      = render partial: "posts/comments/form", locals: { comment: PostComment.build(parent: comment), url: post_comments_path(post_id:) }
+      = render partial: 'posts/comments/form', locals: { comment: PostComment.build(parent: comment), url: post_comments_path(post_id:) }
 
     - comment.children.each do |child_comment|
-      = render partial: "posts/comments/show", locals: { comment: child_comment, post_id: child_comment.post_id }
+      = render partial: 'posts/comments/show', locals: { comment: child_comment, post_id: child_comment.post_id }
